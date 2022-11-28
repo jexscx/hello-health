@@ -1,5 +1,5 @@
 <template>
     <div>
-        <Appointement></Appointement>
+        <AppointmentDetail></AppointmentDetail>
     </div>
 </template>
