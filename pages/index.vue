@@ -1,5 +1,5 @@
 <template>
     <div>
-        <AppointmentDetail></AppointmentDetail>
+        <AgendaView></AgendaView>
     </div>
 </template>

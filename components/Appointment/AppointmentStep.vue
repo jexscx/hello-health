@@ -32,7 +32,7 @@ interface Props {
 const isOpen = useState('isOpen', () => false);
 const content = ref<HTMLDivElement | null>(null);
 
-const props = defineProps<Props>();
+defineProps<Props>();
 const toggle = () => {
     isOpen.value = !isOpen.value;
     if (content.value) {
