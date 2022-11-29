@@ -1,5 +1,5 @@
 <template>
     <div>
-        <AgendaView></AgendaView>
+        <QuestionPrefix></QuestionPrefix>
     </div>
 </template>
