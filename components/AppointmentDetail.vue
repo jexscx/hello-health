@@ -26,29 +26,10 @@
         </div>
 
         <div class="flex flex-col gap-y-2">
-            <button @click="changeIcon()" class="outline outline-1 outline-orange-300 rounded w-full h-10">
-                <div class="flex flex-row justify-between mx-4 items-center">
-                    <h6 class="text-xl font-bold text-orange-300">Voorbereiding</h6>
-                    <svg width="24" height="24" fill="none" stroke="#fdba74" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <use href="/feather-sprite.svg#chevron-left" />
-                    </svg>
-                </div>
-            </button>
-            <div class="shadow-3xl rounded w-full h-10 flex flex-row justify-between items-center">
-                <p class="pl-4 text-base font-bold tracking-wide">Vragen opstellen</p>
-                <button class="pr-4">
-                    <p class="text-base tracking-wide">Bekijken</p>
-                </button>
-            </div>
+            <AppointmentStep step-name="Voorbereiding" :substeps="['Test', 'Test 2']" />
         </div>
     </div>
 </template>
 
-<script>
-var icon =
-    function changeIcon(params) {
-
-
-    }
+<script setup>
 </script>
