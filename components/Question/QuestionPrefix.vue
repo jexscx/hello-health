@@ -4,7 +4,7 @@
             <h1 class="text-3xl font-bold">Suggestie vragen om te stellen</h1>
         </div>
         <div class="grid grid-cols-2 items-center">
-            <h6 class="text-xl font-bold">Dr. Velden V.d. Linden</h6>
+            <p class="text-base text-left font-bold tracking-wide">Dr. Velden V.d. Linden</p>
             <p class="text-base text-right tracking-wide">Psychologie</p>
         </div>
         <div class="flex flex-col">
@@ -18,8 +18,8 @@
 </template>
 
 <script setup>
+
 const questions = [
     'Uit welke behandelingen kan ik kiezen?', 'Welke behandeling raadt u aan?', 'Waarom wordt deze behandeling gekozen?', 'Mag ik wat bedenktijd?'
-
 ]
 </script>
