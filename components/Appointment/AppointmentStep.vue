@@ -11,13 +11,12 @@
     </button>
     <div class="transition-all overflow-hidden" ref="content">
         <div class="flex flex-col gap-4 p-2">
-            <div class="shadow-3xl rounded w-full h-12 flex flex-row justify-between items-center"
+            <NuxtLink to="/questions" class="shadow-3xl rounded w-full h-12 flex flex-row justify-between items-center"
                 v-for="substep of substeps" :key="substep">
-                <p class="pl-4 text-base font-bold tracking-wide">{{ substep }}</p>
-                <button class="pr-4">
-                    <p class="text-base tracking-wide">Bekijken</p>
-                </button>
-            </div>
+                <span class="pl-4 text-base font-bold tracking-wide">{{ substep }}</span>
+
+                <span class="text-base tracking-wide">Bekijken</span>
+            </NuxtLink>
         </div>
     </div>
 </template>
