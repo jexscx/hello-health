@@ -573,7 +573,7 @@
 
 "@shimyshack/uid@^0.1.7":
   version "0.1.7"
-  resolved "https://registry.yarnpkg.com/@shimyshack/uid/-/uid-0.1.7.tgz#5b54c77e9ffbead118973f267abc38c36a18fc57"
+  resolved "https://registry.npmjs.org/@shimyshack/uid/-/uid-0.1.7.tgz"
   integrity sha512-RVcLjoNwV7nKPxor9Ua09ilu6aBbaL0YRQV2MmCMUoKidazPKJ9z84l/tQG7fL4TP1sZ9VWfSPDyV1YCWuGmYw==
   dependencies:
     vue "^3.2.25"
@@ -587,6 +587,11 @@
   version "1.0.0"
   resolved "https://registry.npmjs.org/@types/estree/-/estree-1.0.0.tgz"
   integrity sha512-WulqXMDUTYAXCjZnk6JtIHPigp55cVtDgDrO2gHRwhyJto21+1zbVCtOYB2L1F9w4qCQ0rOGWBnBe0FNTiEJIQ==
+
+"@types/luxon@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@types/luxon/-/luxon-3.1.0.tgz#b9842d233a06b267fe4117f1c224f20b8a149825"
+  integrity sha512-gCd/HcCgjqSxfMrgtqxCgYk/22NBQfypwFUG7ZAyG/4pqs51WLTcUzVp1hqTbieDYeHS3WoVEh2Yv/2l+7B0Vg==
 
 "@types/node@*":
   version "18.11.9"
@@ -2579,6 +2584,11 @@ lru-cache@^6.0.0:
   integrity sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==
   dependencies:
     yallist "^4.0.0"
+
+luxon@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.npmjs.org/luxon/-/luxon-3.1.1.tgz"
+  integrity sha512-Ah6DloGmvseB/pX1cAmjbFvyU/pKuwQMQqz7d0yvuDlVYLTs2WeDHQMpC8tGjm1da+BriHROW/OEIT/KfYg6xw==
 
 magic-string@^0.25.7:
   version "0.25.9"
