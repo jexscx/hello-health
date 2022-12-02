@@ -3,9 +3,9 @@
     to="/questions"
     class="shadow-3xl rounded w-full h-12 flex flex-row justify-between items-center"
   >
-    <span class="pl-4 text-base font-bold tracking-wide">{{ text }}</span>
+    <span class="pl-2 text-base font-bold tracking-wide">{{ text }}</span>
 
-    <span class="text-base tracking-wide">Bekijken</span>
+    <span class="text-base tracking-wide pr-2">Bekijken</span>
   </NuxtLink>
 </template>
 

@@ -1,11 +1,11 @@
 <template>
   <div class="flex flex-col space-y-3" v-if="!pending">
     <div>
-      <h1 class="text-3xl font-bold">Afspraak details</h1>
+      <h1 class="h1">Afspraak details</h1>
     </div>
     <div class="grid grid-cols-2 items-end space-y-1 max-w-md" v-if="data">
-      <h6 class="text-xl font-bold">{{ data.person }}</h6>
-      <p class="text-base text-right tracking-wide">{{ data.department }}</p>
+      <h2 class="h2">{{ data.person }}</h2>
+      <span class="text">{{ data.department }}</span>
       <div class="flex space-x-3">
         <svg
           width="24"
@@ -24,12 +24,12 @@
       </div>
       <p class="text-base text-right tracking-wide">0/3 stappen voltooid</p>
     </div>
-    <AppointmentProgressBar :progress="67" />
+    <AppointmentProgressBar :progress="1" />
 
     <div class="flex flex-col gap-y-2">
       <AppointmentStep
         step-name="Voorbereiding"
-        :substeps="['Test', 'Test 2']"
+        :substeps="['Vragen voorbereiden']"
       />
     </div>
   </div>
