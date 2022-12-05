@@ -1,20 +1,20 @@
 <template>
   <div>
     <input
-      class="inputField"
+      class="inputField shadow-md hover:border-slate-400"
       type="text"
-      :value="modelValue"
-      @keyup.enter="
-        $emit('update:modelValue', ($event.target as HTMLInputElement).value)
-      "
+      @keyup.enter="(event) => handleEnter(event)"
       placeholder="Voeg vragen toe"
     />
   </div>
 </template>
 
 <script setup lang="ts">
-defineProps<{
-  modelValue: string;
-}>();
-defineEmits(["update:modelValue"]);
+const emit = defineEmits(["add"]);
+
+function handleEnter(event: Event) {
+  const input = event.target as HTMLInputElement;
+  emit("add", input.value);
+  input.value = "";
+}
 </script>

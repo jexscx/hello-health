@@ -1,6 +1,6 @@
 <template>
   <NuxtLink
-    to="/questions"
+    :to="$route.fullPath + '/questions'"
     class="shadow-3xl rounded w-full h-12 flex flex-row justify-between items-center"
   >
     <span class="pl-2 text-base font-bold tracking-wide">{{ text }}</span>

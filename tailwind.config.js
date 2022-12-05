@@ -23,9 +23,12 @@ module.exports = {
           "@apply outline outline-2 outline-orange-300 bg-orange-300 rounded w-full h-12 text-left pl-4 text-white font-bold":
             {},
         },
-        ".inputField": {
-          "@apply outline outline-2 outline-orange-300 rounded w-full h-12 pl-4 mt-4":
+        ".btn-outline": {
+          "@apply outline outline-2 outline-sky-900 rounded px-4 h-12 flex justify-center items-center":
             {},
+        },
+        ".inputField": {
+          "@apply rounded w-full h-12 pl-4 mt-4": {},
         },
         ".text": {
           "@apply text-base text-left tracking-wide": {},
