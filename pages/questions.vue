@@ -23,7 +23,7 @@
         >{{ question.content }}</QuestionItem
       >
     </div>
-    <Button :secondary="true" :slug="'/own-questions'">Ga verder</Button>
+    <Button :secondary="true" :slug="'/questionform'">Ga verder</Button>
   </div>
 </template>
 

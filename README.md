@@ -1,42 +1,77 @@
-# Nuxt 3 Minimal Starter
+<!-- PROJECT LOGO -->
+<br />
+<p>
+  <a href="https://git.fhict.nl/I410676/hello-health">
+    <img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FU33kT3CVlp9HpImE3HtU%2Fuploads%2FzMDhTfu82cEhOxLa078p%2FLogo.png?alt=media&token=6c2a9e5a-de00-4f88-aead-26734a881a0f" alt="Logo" width="600" height="80">
+  </a>
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+  <h3>Hello health - A helping hand in healthcare</h3>
+</p>
 
-## Setup
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li>
+    <a href="#getting-started">Credits</a>
+    </li>
+  </ol>
+</details>
 
-Make sure to install the dependencies:
+## About The Project
 
-```bash
-# yarn
-yarn install
+<img src="https://s6.portfolio-jessy.nl/content/images/2021/03/Frame-4.png" alt="Logo" width="480" height="720">
 
-# npm
-npm install
+To adjust to the needs of the future of people with limited health literacy an app is invented to track appointments, enable them to ask questions and recond conversations. To learn how we invented this, visit our design researches:
 
-# pnpm
-pnpm install --shamefully-hoist
-```
+- [Gitbook product docs](https://graduation.jessy-mlch.studio/product-docs/)
+- [Figma prototype](https://www.figma.com/file/odDBoSoyuwBUTAyr9vXsUK/Prototype-Hello-Health?node-id=190%3A266&t=Vn7fXbVMR6qvtG96-3)
 
-## Development Server
+### Built With
 
-Start the development server on http://localhost:3000
+The app is built in Nuxt 3: An open source framework under MIT license that makes web development simple and powerful. We've used Flutter mainly because it enables to render everything on the server, it's quick and very up-to-date.
 
-```bash
-npm run dev
-```
+- [Nuxt 3](https://nuxt.com/)
 
-## Production
+## Getting Started
 
-Build the application for production:
+This is how you set up your project locally.
+To get a local copy up and running follow these simple example steps.
 
-```bash
-npm run build
-```
+### Prerequisites
 
-Locally preview production build:
+If you never used Nuxt, follow the installation guide:
 
-```bash
-npm run preview
-```
+- [Flutter installation guide](https://nuxt.com/docs/getting-started/installation)
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/jexscx/hello-health.git
+   ```
+2. Open project and get dependencies
+   ```sh
+    yarn install or npm i
+   ```
+3. Start the application in dev-mode
+   ```sh
+    yarn dev -o
+   ```
+
+## Credits
+
+Credits to [Jessy](https://git.fhict.nl/I410676)!
