@@ -2,7 +2,7 @@
 <br />
 <p>
   <a href="https://git.fhict.nl/I410676/hello-health">
-    <img src="[https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FU33kT3CVlp9HpImE3HtU%2Fuploads%2FzMDhTfu82cEhOxLa078p%2FLogo.png?alt=media&token=6c2a9e5a-de00-4f88-aead-26734a881a0f](https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FU33kT3CVlp9HpImE3HtU%2Fuploads%2FJqrm5urJWOT82jEqmE6P%2FScreenshot%202022-12-06%20at%2011.04.28.png?alt=media&token=960ea0ec-cafb-4f4e-8c1b-9c6f0d8c633f)" alt="Logo" width="600" height="80">
+    <img src="[https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FU33kT3CVlp9HpImE3HtU%2Fuploads%2FJqrm5urJWOT82jEqmE6P%2FScreenshot%202022-12-06%20at%2011.04.28.png?alt=media&token=960ea0ec-cafb-4f4e-8c1b-9c6f0d8c633f]" alt="Logo" width="600" height="80">
   </a>
 
   <h3>Hello health - A helping hand in healthcare</h3>
