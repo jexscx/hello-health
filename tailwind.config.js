@@ -56,6 +56,9 @@ module.exports = {
         ".h1": {
           "@apply text-3xl font-bold": {},
         },
+        ".h1-md": {
+          "@apply text-xl font-bold": {},
+        },
 
         ".h2": {
           "@apply text-xl font-bold": {},
