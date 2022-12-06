@@ -1,8 +1,9 @@
 <template>
-  <div class="flex flex-col space-y-3" v-if="!pending">
+  <div class="flex flex-col mb-20" v-if="!pending">
     <div>
       <h1 class="h1">Aankomende afspraken</h1>
     </div>
+    <div class="w-full border-3px ring-1 my-4 ring-slate-400"></div>
     <CalendarItem
       v-for="appointment of data?.appointments"
       :slug="appointment.slug"
