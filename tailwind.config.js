@@ -13,6 +13,23 @@ module.exports = {
       boxShadow: {
         "3xl": "0px 1px 4px rgba(0, 0, 0, 0.25)",
       },
+      colors: {
+        transparent: "transparent",
+        current: "currentColor",
+        white: "#ffffff",
+        tahiti: {
+          100: "#cffafe",
+          200: "#a5f3fc",
+          300: "#67e8f9",
+          400: "#22d3ee",
+          500: "#06b6d4",
+          600: "#0891b2",
+          700: "#0e7490",
+          800: "#155e75",
+          900: "#164e63",
+        },
+        // ...
+      },
     },
   },
   plugins: [
