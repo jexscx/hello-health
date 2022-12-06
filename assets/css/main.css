@@ -5,3 +5,9 @@
 html, body, #__nuxt {
     @apply w-full h-full;
 }
+
+@layer utilities {
+    .striped div:nth-child(even) {
+      @apply bg-gray-200
+    }
+  }

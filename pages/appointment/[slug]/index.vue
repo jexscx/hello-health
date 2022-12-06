@@ -1,36 +1,35 @@
 <template>
-  <div class="flex flex-col space-y-3" v-if="!pending">
-    <div>
-      <h1 class="h1">Afspraak details</h1>
-    </div>
-    <div class="grid grid-cols-2 items-end space-y-1 max-w-md" v-if="data">
-      <h2 class="h2">{{ data.person }}</h2>
-      <span class="text">{{ data.department }}</span>
-      <div class="flex space-x-3">
-        <svg
-          width="24"
-          height="24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <use href="/feather-sprite.svg#calendar" />
-        </svg>
-        <p class="text-base text-left tracking-wide">
-          {{ formatDate(convertDate(data.date)) }}
-        </p>
-      </div>
-      <p class="text-base text-right tracking-wide">0/3 stappen voltooid</p>
-    </div>
-    <AppointmentProgressBar :progress="1" />
+  <div class="grid lg:grid-cols-2 lg:gap-10" v-if="!pending">
+    <!-- <AppointmentProgressBar :progress="1" /> -->
 
-    <div class="flex flex-col gap-y-2">
+    <div class="flex flex-col gap-4">
+      <h1 class="h1 max-md:h1-md">Stappenplan</h1>
       <AppointmentStep
         step-name="Voorbereiding"
         :substeps="['Vragen voorbereiden']"
       />
+    </div>
+    <div class="flex flex-col">
+      <h1 class="h1 max-md:h1-md">Afspraak details</h1>
+      <div class="grid grid-flow-row content-center h-1/3 striped" v-if="data">
+        <div class="w-full h-10 flex items-center">
+          <span class="text">{{ data.person }}</span>
+        </div>
+        <div class="w-full h-10 flex items-center">
+          <span class="text">{{ data.department }}</span>
+        </div>
+        <div class="w-full h-10 flex items-center">
+          <span class="text">
+            {{ formatDate(convertDate(data.date)) }}
+          </span>
+        </div>
+        <div class="w-full h-10 flex items-center">
+          <span class="text">{{ data.location }}</span>
+        </div>
+        <div class="w-full h-10 flex items-center">
+          <span class="text">{{ data.adres }}</span>
+        </div>
+      </div>
     </div>
   </div>
   <span v-else>Loading...</span>

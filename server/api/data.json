@@ -4,25 +4,34 @@
             "slug": "5375c291-0df8-4fb3-aafd-7ad3d3db4c34",
             "date": "2023-01-24T15:30:00.000",
             "department": "Logopedie",
-            "person": "Dr. Hoffmann"
+            "person": "Dr. Hoffmann",
+            "location": "Zuyderland Ziekenhuis",
+            "adres": "Henri Dunantstraat 5, 6419 PC Heerlen"
         },
         {
             "slug": "c70a46fc-3deb-4c37-ac12-2ca07a6f45d6",
             "date": "2023-02-10T09:30:00.000",
             "department": "Medische beeldvorming",
-            "person": "Dr. Romero"
+            "person": "Dr. Romero",
+            "location": "Zuyderland Ziekenhuis",
+            "adres": "Henri Dunantstraat 5, 6419 PC Heerlen"
+
         },
         {
             "slug": "20a82e95-ec3e-4e15-82a3-fc369778f8e8",
             "date": "2023-03-15T15:20:00.000",
             "department": "Neurologie",
-            "person": "Dr. Klaassen"
+            "person": "Dr. Klaassen",
+            "location": "Zuyderland Ziekenhuis",
+            "adres": "Henri Dunantstraat 5, 6419 PC Heerlen"
         },
         {
             "slug": "eb39a976-3cf9-44e9-9095-cb063423bb47",
             "date": "2023-05-12T10:00:00.000",
             "department": "Psychologie",
-            "person": "Dr. van der Velden"
+            "person": "Dr. van der Velden",
+            "location": "Zuyderland Ziekenhuis",
+            "adres": "Henri Dunantstraat 5, 6419 PC Heerlen"
         },
         {
             "slug": "d9252f3b-8e07-44bb-b782-50615d99e440",
@@ -35,13 +44,17 @@
             "slug": "bbe4865c-4c72-42a0-a140-58d0765f1a9a",
             "date": "2023-07-18T11:30:00.000",
             "department": "Urologie",
-            "person": "Dr. McGrath"
+            "person": "Dr. McGrath",
+            "location": "Zuyderland Ziekenhuis",
+            "adres": "Henri Dunantstraat 5, 6419 PC Heerlen"
         },
         {
             "slug": "29c49a8a-fbbf-441c-826c-3d7e079cbf77",
             "date": "2023-07-24T10:45:00.000",
             "department": "Revalidatie",
-            "person": "Dr. Mack"
+            "person": "Dr. Mack",
+            "location": "Zuyderland Ziekenhuis",
+            "adres": "Henri Dunantstraat 5, 6419 PC Heerlen"
         }
     ]
 }

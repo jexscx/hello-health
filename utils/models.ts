@@ -3,4 +3,7 @@ export interface Appointment {
     person: string;
     date: string;
     department: string;
+    location: string;
+    adres: string;
+
   }
