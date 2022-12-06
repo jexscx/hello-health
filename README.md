@@ -55,7 +55,7 @@ To get a local copy up and running follow these simple example steps.
 
 If you never used Nuxt, follow the installation guide:
 
-- [Flutter installation guide](https://nuxt.com/docs/getting-started/installation)
+- [Nuxt 3 installation guide](https://nuxt.com/docs/getting-started/installation)
 
 ### Installation
 
