@@ -1,5 +1,6 @@
 <template>
   <div class="flex flex-col gap-4 pl-4 pt-12 rounded-md">
+    <img src="/img/logo@2x.png" />
     <NuxtLink to="/" class="flex h-12 flex-row items-center pl-4">
       <svg
         class="w-6 h-6 fill-none stroke-sky-900 stroke-2"
