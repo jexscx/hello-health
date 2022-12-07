@@ -4,10 +4,7 @@
 
     <div class="flex flex-col gap-4">
       <h1 class="h1 max-md:h1-md">Stappenplan</h1>
-      <AppointmentStep
-        step-name="Voorbereiding"
-        :substeps="['Vragen voorbereiden']"
-      />
+      <AppointmentStepper :steps="steps" />
     </div>
     <div class="flex flex-col">
       <h1 class="h1 max-md:h1-md">Afspraak details</h1>
@@ -42,7 +39,7 @@
 
 <script setup lang="ts">
 import { DateTime } from "luxon";
-import { Appointment } from "~~/utils/models";
+import { Appointment, Step } from "~~/utils/models";
 
 definePageMeta({
   validate: async ({ params }) => {
@@ -57,6 +54,13 @@ definePageMeta({
 
 const { params } = useRoute();
 
+onBeforeMount(() => {
+  const json = localStorage.getItem(params.slug.toString());
+  if (json) {
+    return (steps[0].status = "done"), (steps[1].status = "todo");
+  }
+});
+
 const { data, pending } = useFetch<Appointment>(
   `/api/appointments/${params.slug}`
 );
@@ -68,4 +72,22 @@ function formatDate(date: DateTime): string {
 function formatTime(date: DateTime): string {
   return date.toFormat("HH:mm", { locale: "nl" });
 }
+
+const steps: Step[] = [
+  {
+    title: "Vragen invullen",
+    status: "todo",
+    url: "/questions",
+  },
+  {
+    title: "Afspraak opnemen",
+    status: "inactive",
+    url: "/questions",
+  },
+  {
+    title: "Rapport bekijken",
+    status: "inactive",
+    url: "/questions",
+  },
+];
 </script>

@@ -1,54 +1,40 @@
 <template>
-  <button
-    class="outline outline-1 outline-orange-300 rounded w-full h-12"
-    @click="() => (isOpen = !isOpen)"
-  >
-    <div class="flex flex-row justify-between mx-4 items-center">
-      <h6 class="text-xl font-bold text-orange-300">{{ stepName }}</h6>
-      <svg
-        width="24"
-        height="24"
-        fill="none"
-        stroke="#fdba74"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+  <div class="grid grid-cols-[[numbers]_1fr_[titles]_8fr] gap-2">
+    <div
+      class="row-span-2 col-[numbers] h-10 border-l-4 rounded border-gray-400 w-px ml-[1.1rem]"
+    ></div>
+    <NuxtLink :to="$route.fullPath + '/questions'" class="col-[numbers]">
+      <div
+        class="h-10 w-10 border-4 border-powderblue-300 rounded-full flex flex-row justify-center items-center"
       >
-        <use href=" /feather-sprite.svg#chevron-down" v-if="isOpen" />
-        <use href=" /feather-sprite.svg#chevron-left" v-else />
-      </svg>
+        <span class="text-xl text-bold text-powderblue-300">2</span>
+      </div>
+    </NuxtLink>
+    <div
+      class="row-span-2 col-[numbers] h-10 border-l-4 rounded border-gray-400 w-px ml-[1.1rem]"
+    ></div>
+    <NuxtLink :to="$route.fullPath + '/questions'" class="col-[numbers]">
+      <div
+        class="h-10 w-10 border-4 border-gray-400 rounded-full flex flex-row justify-center items-center"
+      >
+        <span class="text-xl text-bold text-gray-400">3</span>
+      </div>
+    </NuxtLink>
+    <div class="h-10 flex items-center col-[titles] row-start-1">
+      <NuxtLink
+        class="w-full rounded-r-md flex content-center"
+        :to="$route.fullPath + '/questions'"
+      >
+        <div class="h2 text-black">Vragen invullen</div>
+      </NuxtLink>
     </div>
-  </button>
-  <div
-    class="transition-all overflow-hidden"
-    :style="{ maxHeight }"
-    ref="content"
-  >
-    <div class="flex flex-col gap-4 p-2">
-      <AppointmentSubstep
-        v-for="substep of substeps"
-        :key="substep"
-        :text="substep"
-      />
+    <div class="h-10 flex items-center col-[titles] row-start-4">
+      <div class="h2">Afspraak opnemen</div>
+    </div>
+    <div class="h-10 flex items-center col-[titles] row-start-7">
+      <div class="h2 text-gray-400">Rapport bekijken</div>
     </div>
   </div>
 </template>
 
-<script setup lang="ts">
-defineProps<{
-  stepName: string;
-  substeps: string[];
-}>();
-
-const isOpen = useState("isOpen", () => true);
-const content = ref<HTMLDivElement | null>(null);
-const maxHeight = computed(() => {
-  if (content.value) {
-    if (isOpen.value) {
-      return content.value?.scrollHeight + "px";
-    } else {
-      return "0px";
-    }
-  }
-});
-</script>
+<script setup lang="ts"></script>
