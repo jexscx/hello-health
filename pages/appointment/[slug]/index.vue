@@ -11,31 +11,28 @@
     </div>
     <div class="flex flex-col">
       <h1 class="h1 max-md:h1-md">Afspraak details</h1>
-      <div
-        class="grid grid-flow-row content-center h-1/3 striped pt-4"
-        v-if="data"
-      >
+      <div class="grid grid-flow-row content-start h-1/3 striped" v-if="data">
         <div class="w-full h-10 flex items-center">
-          <span class="text">{{ data.person }}</span>
+          <span class="text pl-2">{{ data.person }}</span>
         </div>
         <div class="w-full h-10 flex items-center">
-          <span class="text">{{ data.department }}</span>
+          <span class="text pl-2">{{ data.department }}</span>
         </div>
         <div class="w-full h-10 flex items-center">
-          <span class="text">
+          <span class="text pl-2">
             {{ formatDate(convertDate(data.date)) }}
           </span>
         </div>
         <div class="w-full h-10 flex items-center">
-          <span class="text">
+          <span class="text pl-2">
             {{ formatTime(convertDate(data.date)) }}
           </span>
         </div>
         <div class="w-full h-10 flex items-center">
-          <span class="text">{{ data.location }}</span>
+          <span class="text pl-2">{{ data.location }}</span>
         </div>
-        <div class="w-full h-10 flex items-center">
-          <span class="text">{{ data.adres }}</span>
+        <div class="w-full h-10 flex items-center rounded-b">
+          <span class="text pl-2">{{ data.adres }}</span>
         </div>
       </div>
     </div>

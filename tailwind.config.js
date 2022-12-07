@@ -17,16 +17,16 @@ module.exports = {
         transparent: "transparent",
         current: "currentColor",
         white: "#ffffff",
-        tahiti: {
-          100: "#cffafe",
-          200: "#a5f3fc",
-          300: "#67e8f9",
-          400: "#22d3ee",
-          500: "#06b6d4",
-          600: "#0891b2",
-          700: "#0e7490",
-          800: "#155e75",
-          900: "#164e63",
+        powderblue: {
+          100: "#147EB8",
+          200: "#1272A5",
+          300: "#7EC9F1",
+          400: "#0E5981",
+          500: "#0C4C6E",
+          600: "#0a3f5c",
+          700: "#083249",
+          800: "#062537",
+          900: "#2A324B",
         },
         // ...
       },
@@ -38,6 +38,10 @@ module.exports = {
       addComponents({
         ".btn-primary": {
           "@apply outline outline-2 outline-orange-300 bg-orange-300 rounded w-full h-12 text-left pl-4 text-white font-bold":
+            {},
+        },
+        ".btn-primary-blue": {
+          "@apply bg-sky-900 outline-sky-900 w-1/4 justify-self-end outline outline-2 rounded h-12 text-center text-white font-bold":
             {},
         },
         ".btn-outline": {
