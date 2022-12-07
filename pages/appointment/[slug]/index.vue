@@ -11,7 +11,10 @@
     </div>
     <div class="flex flex-col">
       <h1 class="h1 max-md:h1-md">Afspraak details</h1>
-      <div class="grid grid-flow-row content-center h-1/3 striped" v-if="data">
+      <div
+        class="grid grid-flow-row content-center h-1/3 striped pt-4"
+        v-if="data"
+      >
         <div class="w-full h-10 flex items-center">
           <span class="text">{{ data.person }}</span>
         </div>
@@ -21,6 +24,11 @@
         <div class="w-full h-10 flex items-center">
           <span class="text">
             {{ formatDate(convertDate(data.date)) }}
+          </span>
+        </div>
+        <div class="w-full h-10 flex items-center">
+          <span class="text">
+            {{ formatTime(convertDate(data.date)) }}
           </span>
         </div>
         <div class="w-full h-10 flex items-center">
@@ -58,5 +66,9 @@ const { data, pending } = useFetch<Appointment>(
 
 function formatDate(date: DateTime): string {
   return date.toFormat("dd - MM - yyyy", { locale: "nl" });
+}
+
+function formatTime(date: DateTime): string {
+  return date.toFormat("HH:mm", { locale: "nl" });
 }
 </script>
