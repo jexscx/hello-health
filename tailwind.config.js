@@ -78,6 +78,9 @@ module.exports = {
         ".h2": {
           "@apply text-xl font-bold": {},
         },
+        ".c-text-lg": {
+          "@apply text-2xl text-left tracking-wide": {},
+        },
       });
     },
   ],
