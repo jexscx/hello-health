@@ -1,6 +1,6 @@
 <template>
   <div class="grid grid-cols-[[numbers]_1fr_[titles]_8fr] gap-2">
-    <AppointmentStepp
+    <AppointmentStep
       v-for="(step, index) in steps"
       :step="step"
       :index="index"

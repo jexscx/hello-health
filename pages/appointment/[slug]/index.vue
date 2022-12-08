@@ -1,7 +1,5 @@
 <template>
   <div class="grid lg:grid-cols-2 lg:gap-10" v-if="!pending">
-    <!-- <AppointmentProgressBar :progress="1" /> -->
-
     <div class="flex flex-col gap-4">
       <h1 class="h1 max-md:h1-md">Stappenplan</h1>
       <AppointmentStepper :steps="steps" />
@@ -82,12 +80,12 @@ const steps: Step[] = [
   {
     title: "Afspraak opnemen",
     status: "inactive",
-    url: "/questions",
+    url: "",
   },
   {
     title: "Rapport bekijken",
     status: "inactive",
-    url: "/questions",
+    url: "",
   },
 ];
 </script>

@@ -3,7 +3,7 @@
     <div class="w-3/4 pl-4">
       <img src="/img/logo@2x.png" />
     </div>
-    <NuxtLink to="/" class="flex h-12 flex-row items-center pl-4">
+    <NuxtLink to="" class="flex h-12 flex-row items-center pl-4">
       <svg
         class="w-6 h-6 fill-none stroke-sky-900 stroke-2"
         stroke-linecap="round"

@@ -33,7 +33,7 @@
       </div>
       <div class="grid">
         <button class="btn-primary-blue" @click="saveAndContinue()">
-          Ga verder
+          Opslaan
         </button>
       </div>
     </div>

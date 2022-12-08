@@ -5,7 +5,7 @@
     </div>
     <div class="flex flex-row items-center gap-10">
       <div>
-        <h5 class="mb-2 text-2xl font-bold">{{ formatTime(date) }}</h5>
+        <h5 class="c-text-lg">{{ formatTime(date) }}</h5>
       </div>
       <NuxtLink
         :to="`appointment/${slug}`"

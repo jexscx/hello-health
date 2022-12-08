@@ -1,40 +1,53 @@
 <template>
-  <div class="grid grid-cols-[[numbers]_1fr_[titles]_8fr] gap-2">
+  <NuxtLink
+    :to="$route.fullPath + '/questions'"
+    class="col-[numbers] rounded-l-md"
+  >
     <div
-      class="row-span-2 col-[numbers] h-10 border-l-4 rounded border-gray-400 w-px ml-[1.1rem]"
-    ></div>
-    <NuxtLink :to="$route.fullPath + '/questions'" class="col-[numbers]">
-      <div
-        class="h-10 w-10 border-4 border-powderblue-300 rounded-full flex flex-row justify-center items-center"
+      class="h-10 w-10 rounded-full flex flex-row justify-center items-center"
+      :class="{
+        'bg-powderblue-300': step.status === 'done',
+        'border-4 border-powderblue-300': step.status === 'todo',
+        'border-4 border-gray-400': step.status === 'inactive',
+      }"
+    >
+      <span
+        class="text-xl text-bold"
+        :class="{
+          'text-white': step.status === 'done',
+          'text-powderblue-300': step.status === 'todo',
+          'text-gray-400': step.status === 'inactive',
+        }"
+        >{{ index + 1 }}</span
       >
-        <span class="text-xl text-bold text-powderblue-300">2</span>
-      </div>
+    </div>
+  </NuxtLink>
+  <div
+    class="h-10 flex items-center col-[titles] bg-sky-900/20 rounded-md pl-2"
+    :class="{
+      'bg-transparent': step.status === 'inactive',
+      'bg-powderblue-300/20': step.status === 'todo',
+    }"
+    :style="{ gridRowStart: 1 + index * 2 }"
+  >
+    <NuxtLink
+      class="w-full rounded-r-md flex content-center"
+      :to="$route.fullPath + step.url"
+    >
+      <span
+        class="h2 text-sky-900"
+        :class="{
+          'text-gray-400': step.status === 'inactive',
+        }"
+      >
+        {{ step.title }}
+      </span>
     </NuxtLink>
-    <div
-      class="row-span-2 col-[numbers] h-10 border-l-4 rounded border-gray-400 w-px ml-[1.1rem]"
-    ></div>
-    <NuxtLink :to="$route.fullPath + '/questions'" class="col-[numbers]">
-      <div
-        class="h-10 w-10 border-4 border-gray-400 rounded-full flex flex-row justify-center items-center"
-      >
-        <span class="text-xl text-bold text-gray-400">3</span>
-      </div>
-    </NuxtLink>
-    <div class="h-10 flex items-center col-[titles] row-start-1">
-      <NuxtLink
-        class="w-full rounded-r-md flex content-center"
-        :to="$route.fullPath + '/questions'"
-      >
-        <div class="h2 text-black">Vragen invullen</div>
-      </NuxtLink>
-    </div>
-    <div class="h-10 flex items-center col-[titles] row-start-4">
-      <div class="h2">Afspraak opnemen</div>
-    </div>
-    <div class="h-10 flex items-center col-[titles] row-start-7">
-      <div class="h2 text-gray-400">Rapport bekijken</div>
-    </div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { Step } from "~~/utils/models";
+
+defineProps<{ index: number; step: Step }>();
+</script>

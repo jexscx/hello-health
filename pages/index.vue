@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col mb-20" v-if="!pending">
+  <div class="flex flex-col mb-20 lg:px-10" v-if="!pending">
     <div>
       <h1 class="h1 max-md:h1-md">Aankomende afspraken</h1>
     </div>
