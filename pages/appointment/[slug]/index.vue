@@ -13,7 +13,6 @@
 </template>
 
 <script setup lang="ts">
-import { DateTime } from "luxon";
 import { Appointment, Step } from "~~/utils/models";
 
 definePageMeta({
@@ -49,7 +48,7 @@ const steps: Step[] = [
   {
     title: "Afspraak opnemen",
     status: "inactive",
-    url: "",
+    url: "/record",
   },
   {
     title: "Rapport bekijken",
