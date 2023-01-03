@@ -6,37 +6,13 @@
     </div>
     <div class="flex flex-col">
       <h1 class="h1 max-md:h1-md">Afspraak details</h1>
-      <div class="grid grid-flow-row content-start h-1/3 striped" v-if="data">
-        <div class="w-full h-10 flex items-center">
-          <span class="text pl-2">{{ data.person }}</span>
-        </div>
-        <div class="w-full h-10 flex items-center">
-          <span class="text pl-2">{{ data.department }}</span>
-        </div>
-        <div class="w-full h-10 flex items-center">
-          <span class="text pl-2">
-            {{ formatDate(convertDate(data.date)) }}
-          </span>
-        </div>
-        <div class="w-full h-10 flex items-center">
-          <span class="text pl-2">
-            {{ formatTime(convertDate(data.date)) }}
-          </span>
-        </div>
-        <div class="w-full h-10 flex items-center">
-          <span class="text pl-2">{{ data.location }}</span>
-        </div>
-        <div class="w-full h-10 flex items-center rounded-b">
-          <span class="text pl-2">{{ data.adres }}</span>
-        </div>
-      </div>
+      <AppointmentDetails v-if="data" :data="data" />
     </div>
   </div>
   <span v-else>Loading...</span>
 </template>
 
 <script setup lang="ts">
-import { DateTime } from "luxon";
 import { Appointment, Step } from "~~/utils/models";
 
 definePageMeta({
@@ -63,14 +39,6 @@ const { data, pending } = useFetch<Appointment>(
   `/api/appointments/${params.slug}`
 );
 
-function formatDate(date: DateTime): string {
-  return date.toFormat("dd - MM - yyyy", { locale: "nl" });
-}
-
-function formatTime(date: DateTime): string {
-  return date.toFormat("HH:mm", { locale: "nl" });
-}
-
 const steps: Step[] = [
   {
     title: "Vragen invullen",
@@ -80,7 +48,7 @@ const steps: Step[] = [
   {
     title: "Afspraak opnemen",
     status: "inactive",
-    url: "",
+    url: "/record",
   },
   {
     title: "Rapport bekijken",
