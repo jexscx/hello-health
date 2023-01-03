@@ -2,16 +2,15 @@
   <div class="flex flex-col items-center w-full">
     <div class="flex flex-col w-4/5">
       <div>
-        <h1 class="h1">Vragen stellen</h1>
+        <span class="text-purple-900/70"
+          >Agenda > Afspraak >
+          <span class="text-purple-900">Vragen bedenken</span></span
+        >
+        <h1 class="text-4xl font-bold text-purple-900 pb-8">Vragen bedenken</h1>
       </div>
-      <div class="grid grid-cols-2 items-center">
-        <span class="text-bold"> Dr. Velden V.d. Linden </span>
-        <span class="text text-right">Psychologie</span>
-      </div>
-      <div class="w-full border-3px ring-1 my-4 ring-slate-400"></div>
       <div class="flex flex-col">
         <span class="text"
-          >Hier staan een aantal vragen die je kunt stellen.</span
+          >Hieronder staan een aantal vragen die je kunt stellen.</span
         >
 
         <span class="text">Je kun ook je eigen vragen toevoegen</span>
@@ -19,20 +18,20 @@
       <div>
         <CustomInput @add="addQuestion($event)" />
       </div>
-      <div class="w-full py-4">
+      <div class="pt-10 flex flex-col gap-8">
         <QuestionItem
           v-for="question in questions"
           :key="question.id"
           :selected="question.isSelected"
           @click="() => toggleSelected(question)"
         >
-          <span class="max-w-full break-words">{{
+          <span class="max-w-full text-lg break-words">{{
             question.text
           }}</span></QuestionItem
         >
       </div>
-      <div class="grid">
-        <button class="btn-primary-blue" @click="saveAndContinue()">
+      <div class="grid pt-8">
+        <button class="btn-primary-purple" @click="saveAndContinue()">
           Opslaan
         </button>
       </div>

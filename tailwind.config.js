@@ -63,8 +63,8 @@ module.exports = {
           "@apply outline outline-2 outline-orange-300 bg-orange-300 rounded w-full h-12 text-left pl-4 text-white font-bold":
             {},
         },
-        ".btn-primary-blue": {
-          "@apply bg-sky-900 outline-sky-900 w-1/4 justify-self-end outline outline-2 rounded h-12 text-center text-white font-bold":
+        ".btn-primary-purple": {
+          "@apply bg-purple-900 outline-purple-900 w-1/4 justify-self-end outline outline-2 rounded h-12 text-center text-white font-bold":
             {},
         },
         ".btn-outline": {

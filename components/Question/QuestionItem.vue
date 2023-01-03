@@ -1,15 +1,23 @@
 <template>
-  <div class="pb-4">
+  <div class="flex gap-4" @click="$emit('click', $event)">
     <div
-      class="outline outline-1 outline-powderblue-500 rounded w-full min-h-[3rem] text-left p-2 flex items-center"
+      class="w-8 h-8 border border-purple-900 rounded flex place-content-center items-center"
       :class="{
-        'outline-none bg-powderblue-500/20 text-bold text-powderblue-500':
-          selected,
+        'bg-purple-900': selected,
       }"
-      @click="$emit('click', $event)"
     >
-      <slot></slot>
+      <svg
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        :class="{
+          'w-6 h-6 fill-none stroke-white stroke-[4px]': selected,
+          hidden: !selected,
+        }"
+      >
+        <use href="/feather-sprite.svg#check" />
+      </svg>
     </div>
+    <slot></slot>
   </div>
 </template>
 
