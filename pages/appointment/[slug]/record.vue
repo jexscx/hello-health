@@ -3,14 +3,14 @@
   </RecordTabs>
   <RecordInput
     v-if="activeTab === 'record'"
-    :is-recording="recording"
+    :state="state"
     :duration="duration"
     @start="start()"
     @stop="stop()"
     @pause="pause()"
     @resume="resume()"
-    @save="save()"
     @cancel="cancel()"
+    @download="download()"
   />
   <RecordQuestions v-else-if="activeTab === 'questions'" />
 </template>
@@ -18,17 +18,19 @@
 <script lang="ts" setup>
 import { Tab } from "~~/components/Record/RecordTabs.vue";
 
+export type RecorderState = "initial" | "recording" | "paused" | "finished";
+
 const activeTab = ref<Tab>("record");
 
 const mediaRecorder = ref<MediaRecorder | null>(null);
 const chunks = ref<Blob[]>([]);
 const stream = ref<MediaStream | null>(null);
-const recording = ref<boolean>(false);
 const duration = ref(0);
+const state = ref<RecorderState>("initial");
 
 // Timer
-watch(recording, (value) => {
-  if (value) {
+watch(state, (value) => {
+  if (value === "recording") {
     setTimeout(() => (duration.value += 100), 100);
   }
 });
@@ -36,7 +38,7 @@ watch(recording, (value) => {
 watch(
   duration,
   (value) => {
-    if (value > 0 && recording.value) {
+    if (value > 0 && state.value === "recording") {
       setTimeout(() => (duration.value += 100), 100);
     }
   },
@@ -56,21 +58,34 @@ const start = async () => {
 
   mediaRecorder.value.ondataavailable = (e: BlobEvent) =>
     chunks.value.push(e.data);
-  mediaRecorder.value.onstart = () => (recording.value = true);
-  mediaRecorder.value.onpause = () => (recording.value = false);
-  mediaRecorder.value.onresume = () => (recording.value = true);
+  mediaRecorder.value.onstart = () => (state.value = "recording");
+  mediaRecorder.value.onpause = () => (state.value = "paused");
+  mediaRecorder.value.onresume = () => (state.value = "recording");
   mediaRecorder.value.onstop = () => {
     stream.value!.getTracks().forEach((track) => track.stop());
-    recording.value = false;
+    state.value = "finished";
   };
 };
 
 const resume = () => mediaRecorder.value!.resume();
 const pause = () => mediaRecorder.value!.pause();
-const stop = () => mediaRecorder.value!.stop();
 
-// To save the recording a new blob has to be made with all de chunks recorded. that will be transfered into an audio file.
-const save = () => {
+// To stop and save the recording a new blob has to be made with all de chunks recorded. that will be transfered into an audio file.
+const stop = () => {
+  mediaRecorder.value!.stop();
+  const blob = new Blob(chunks.value, { type: "audio/ogg; codecs=opus" });
+  const audioURL = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  document.body.appendChild(a);
+  a.setAttribute("style", "display: none");
+  a.href = audioURL;
+  a.download = "recording.ogg";
+  a.click();
+  window.URL.revokeObjectURL(audioURL);
+  document.body.removeChild(a);
+};
+
+const download = () => {
   const blob = new Blob(chunks.value, { type: "audio/ogg; codecs=opus" });
   const audioURL = URL.createObjectURL(blob);
   const a = document.createElement("a");
