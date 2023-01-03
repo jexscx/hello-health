@@ -9,6 +9,7 @@ export interface Appointment {
 
 export interface Step {
   title: string;
-  status: "inactive" | "todo" | "done";
+  status: "inactive" | "active" | "done";
   url: string;
+  icon: string;
 }

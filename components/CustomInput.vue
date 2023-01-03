@@ -1,10 +1,10 @@
 <template>
   <div>
     <input
-      class="inputField shadow-md hover:border-slate-400"
+      class="inputField border border-purple-900"
       type="text"
       @keyup.enter="(event) => handleEnter(event)"
-      placeholder="Voeg vragen toe"
+      placeholder="Typ hier je vraag"
     />
   </div>
 </template>

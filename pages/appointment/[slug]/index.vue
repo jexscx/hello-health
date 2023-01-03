@@ -1,12 +1,15 @@
 <template>
-  <div class="grid lg:grid-cols-2 lg:gap-10" v-if="!pending">
+  <div class="" v-if="!pending">
     <div class="flex flex-col gap-4">
-      <h1 class="h1 max-md:h1-md">Stappenplan</h1>
-      <AppointmentStepper :steps="steps" />
-    </div>
-    <div class="flex flex-col">
-      <h1 class="h1 max-md:h1-md">Afspraak details</h1>
-      <AppointmentDetails v-if="data" :data="data" />
+      <div>
+        <span class="text-purple-900/70"
+          >Agenda > <span class="text-purple-900">Afspraak</span></span
+        >
+        <h1 class="text-4xl font-bold text-purple-900">
+          Wat wil je graag doen?
+        </h1>
+      </div>
+      <AppointmentItems :steps="steps" />
     </div>
   </div>
   <span v-else>Loading...</span>
@@ -31,7 +34,7 @@ const { params } = useRoute();
 onBeforeMount(() => {
   const json = localStorage.getItem(params.slug.toString());
   if (json) {
-    return (steps[0].status = "done"), (steps[1].status = "todo");
+    return (steps[0].status = "done"), (steps[1].status = "active");
   }
 });
 
@@ -41,19 +44,28 @@ const { data, pending } = useFetch<Appointment>(
 
 const steps: Step[] = [
   {
-    title: "Vragen invullen",
-    status: "todo",
+    title: "Vragen Bedenken",
+    status: "active",
     url: "/questions",
+    icon: "help-circle",
   },
   {
-    title: "Afspraak opnemen",
+    title: "Gesprek opnemen",
     status: "inactive",
     url: "/record",
+    icon: "mic",
   },
   {
-    title: "Rapport bekijken",
+    title: "Gesprek terugluisteren",
     status: "inactive",
-    url: "",
+    url: "/record",
+    icon: "volume-2",
+  },
+  {
+    title: "Afspraak informatie",
+    status: "active",
+    url: "/details",
+    icon: "info",
   },
 ];
 </script>
