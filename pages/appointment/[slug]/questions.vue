@@ -41,6 +41,8 @@
 
 <script setup lang="ts">
 import { Ref } from "vue";
+import { CustomInput, QuestionItem } from "~~/.nuxt/components";
+import { Question } from "~~/utils/models";
 
 const { params } = useRoute();
 
@@ -52,7 +54,6 @@ onBeforeMount(() => {
 
 function toggleSelected(question: Question) {
   question.isSelected = !question.isSelected;
-  console.log(questions);
 }
 
 function addQuestion(text: string) {
@@ -73,11 +74,6 @@ function saveAndContinue() {
   });
 }
 
-interface Question {
-  id: number;
-  text: string;
-  isSelected: boolean;
-}
 const questions: Ref<Question[]> = ref([
   {
     id: 0,
