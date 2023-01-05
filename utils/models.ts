@@ -13,3 +13,9 @@ export interface Step {
   url: string;
   icon: string;
 }
+
+export interface Question {
+  id: number;
+  text: string;
+  isSelected: boolean;
+}
